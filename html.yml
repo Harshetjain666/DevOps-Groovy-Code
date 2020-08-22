@@ -41,7 +41,7 @@ spec:
         type: html
     spec:
       containers:
-      - image: harshetjain/html-environment
+      - image: httpd
         name: webserver
         ports:
         - containerPort: 80
