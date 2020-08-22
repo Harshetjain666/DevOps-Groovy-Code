@@ -46,7 +46,7 @@ job('job2') {
             deployname=$(kubectl get deployment --selector=type=html --output=jsonpath={.items..metadata.name})
             if [ $deployname =="" ]
             then
-            kubectl create -f /root/workspace/html.yaml
+            kubectl create -f /root/workspace/html.yml
             else
             echo "Environment updating ..."
             fi
