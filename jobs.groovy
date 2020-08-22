@@ -71,18 +71,24 @@ job('job3') {
     }
     publishers {
         mailer('hjain8620.hj@gmail.com', false, false)
+        downstreamParameterized {
+            trigger('job4') {
+                condition('UNSTABLE')
+                
+            }
+        }
+
     }
 }
 
 job('job4') {
     description('Run Over Old Setup')
     label('rhel')
-    triggers {
-        upstream('job3', 'UNSTABLE')
     }
     steps {
         shell('''kubectl set image deployment  *=harshetjain/html-environment:v1 --selector=type=html --record''')
     }
+    
 }
 
 buildPipelineView('Pipeline') {
