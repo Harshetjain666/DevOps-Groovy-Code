@@ -84,11 +84,9 @@ job('job3') {
 job('job4') {
     description('Run Over Old Setup')
     label('rhel')
-    }
     steps {
         shell('''kubectl set image deployment  *=harshetjain/html-environment:v1 --selector=type=html --record''')
     }
-    
 }
 
 buildPipelineView('Pipeline') {
