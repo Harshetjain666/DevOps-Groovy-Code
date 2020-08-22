@@ -85,7 +85,7 @@ job('job4') {
     }
 }
 
-buildPipelineView('Task6_view') {
+buildPipelineView('Pipeline') {
     filterBuildQueue(false)
     filterExecutors(false)
     displayedBuilds(1)
