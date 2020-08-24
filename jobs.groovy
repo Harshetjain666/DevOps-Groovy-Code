@@ -59,6 +59,9 @@ job('job3') {
     label('rhel')
     triggers {
         upstream('job2', 'SUCCESS')
+        pollSCM {
+            scmpoll_spec(* * * * *)
+        }
     }
     steps {
         shell('''status=$(curl -o /dev/null -s -w "%{http_code}" http://192.168.99.100:31000)
