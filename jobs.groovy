@@ -93,7 +93,7 @@ job('job4') {
 }
 
 buildPipelineView('Pipeline') {
-    filterBuildQueue(false)
+    filterBuildQueue(true)
     filterExecutors(false)
     displayedBuilds(1)
     selectedJob('job1')
